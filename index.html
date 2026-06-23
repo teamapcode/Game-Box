@@ -654,9 +654,128 @@
     gap: 15px !important;
   }
 }
+/* ===== صفحه لودینگ ===== */
+#splashScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0b1a2e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  transition: opacity 0.8s ease;
+}
+#splashScreen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.cube-container {
+  width: 120px;
+  height: 120px;
+  perspective: 600px;
+}
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spinCube 2s infinite linear;
+}
+.cube .face {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border: 3px solid #ffb347;
+  background: rgba(255, 179, 71, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  box-shadow: inset 0 0 30px rgba(255, 179, 71, 0.2);
+}
+.cube .face i {
+  font-size: 3.5rem;
+  color: #ffb347;
+  text-shadow: 0 0 30px rgba(255, 179, 71, 0.5);
+}
+.cube .front  { transform: translateZ(60px); }
+.cube .back   { transform: rotateY(180deg) translateZ(60px); }
+.cube .right  { transform: rotateY(90deg) translateZ(60px); }
+.cube .left   { transform: rotateY(-90deg) translateZ(60px); }
+.cube .top    { transform: rotateX(90deg) translateZ(60px); }
+.cube .bottom { transform: rotateX(-90deg) translateZ(60px); }
+
+@keyframes spinCube {
+  0% { transform: rotateX(0deg) rotateY(0deg); }
+  100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+.loading-text {
+  margin-top: 30px;
+  color: #ffb347;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.progress-bar {
+  margin-top: 20px;
+  width: 200px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  background: #ffb347;
+  border-radius: 10px;
+  animation: loadProgress 3s ease-in-out forwards;
+}
+@keyframes loadProgress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+@media (max-width: 480px) {
+  .cube-container { width: 80px; height: 80px; perspective: 400px; }
+  .cube .face { width: 80px; height: 80px; }
+  .cube .face i { font-size: 2.5rem; }
+  .cube .front  { transform: translateZ(40px); }
+  .cube .back   { transform: rotateY(180deg) translateZ(40px); }
+  .cube .right  { transform: rotateY(90deg) translateZ(40px); }
+  .cube .left   { transform: rotateY(-90deg) translateZ(40px); }
+  .cube .top    { transform: rotateX(90deg) translateZ(40px); }
+  .cube .bottom { transform: rotateX(-90deg) translateZ(40px); }
+  .loading-text { font-size: 1rem; }
+  .progress-bar { width: 150px; }
+}
   </style>
 </head>
 <body>
+  <!-- ===== صفحه لودینگ با مکعب طلایی ===== -->
+<div id="splashScreen">
+  <div class="cube-container">
+      <div class="cube">
+          <div class="face front"><i class="fas fa-dice-d6"></i></div>
+          <div class="face back"><i class="fas fa-dice-d6"></i></div>
+          <div class="face right"><i class="fas fa-dice-d6"></i></div>
+          <div class="face left"><i class="fas fa-dice-d6"></i></div>
+          <div class="face top"><i class="fas fa-dice-d6"></i></div>
+          <div class="face bottom"><i class="fas fa-dice-d6"></i></div>
+      </div>
+  </div>
+  <div class="loading-text">Game Box</div>
+  <div class="progress-bar">
+      <div class="progress-fill"></div>
+  </div>
+</div>
 
 <!-- ===== صفحه ورود ===== -->
 <div id="loginOverlay">
@@ -798,7 +917,7 @@
         <p>من همیشه به ساخت ابزارهای مفید، ساده و قابل استفاده برای کاربران علاقه‌مند بوده‌ام و Game Box یکی از پروژه‌هایی است که با همین نگاه ساخته شده است.</p>
       </div>
       <div class="about-logo-badge">
-        <img src="https://dl.toolschi.com/up/e0a3b45e9fb71a1d.jpg" alt="اشکان پیمان">
+        <img src="logo2.jpg" alt="اشکان پیمان">
         <p style="font-weight:700; color:#0b1a2e;">اشکان پیمان</p>
         <p style="font-size:0.9rem; color:#2f4760;">توسعه‌دهنده Game Box</p>
       </div>
@@ -867,6 +986,10 @@
 </div>
 
 <script>
+  // ===== صفحه لودینگ =====
+setTimeout(function() {
+  document.getElementById('splashScreen').classList.add('hidden');
+}, 3500);
 // =============================================
 // ===== ورود و خروج =====
 // =============================================
