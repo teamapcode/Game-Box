@@ -448,6 +448,212 @@
       /* ===== فوتر ===== */
       footer { flex-direction: column; gap: 10px; font-size: 14px; }
     }
+    /* ===== ریسپانسیو برای موبایل ===== */
+@media (max-width: 780px) {
+  /* هدر */
+  header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+  nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  nav ul li a {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+  .user-info {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5px 12px;
+  }
+  .user-info .user-name {
+    font-size: 14px;
+  }
+  
+  /* محتوای صفحات */
+  .page {
+    padding: 15px !important;
+  }
+  
+  /* صفحه ورود */
+  .login-card {
+    padding: 20px !important;
+    max-width: 95% !important;
+    max-height: 95vh !important;
+    overflow-y: auto !important;
+    margin: 10px !important;
+    border-radius: 20px !important;
+  }
+  .login-card .logo-big {
+    font-size: 2.5rem !important;
+    padding: 12px !important;
+  }
+  .login-card h2 {
+    font-size: 1.3rem !important;
+  }
+  .login-card p {
+    font-size: 14px !important;
+  }
+  .login-card input[type="text"] {
+    font-size: 14px !important;
+    padding: 10px 14px !important;
+  }
+  .login-card label {
+    font-size: 14px !important;
+  }
+  .avatar-option {
+    width: 45px !important;
+    height: 45px !important;
+    font-size: 1.5rem !important;
+  }
+  .login-btn {
+    font-size: 1rem !important;
+    padding: 12px !important;
+  }
+  
+  /* بنر */
+  .banner img {
+    max-height: 180px !important;
+  }
+  
+  /* صفحه خانه */
+  .page-title {
+    font-size: 1.5rem !important;
+  }
+  .page-sub {
+    font-size: 14px !important;
+  }
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+  .feature-item {
+    padding: 15px 8px !important;
+  }
+  .feature-item i {
+    font-size: 1.8rem !important;
+  }
+  .feature-item h4 {
+    font-size: 13px !important;
+  }
+  .badge-android {
+    font-size: 14px !important;
+    padding: 8px 16px !important;
+  }
+  .filter-sample {
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    padding: 12px !important;
+  }
+  .filter-sample span {
+    font-size: 13px !important;
+  }
+  
+  /* نظرات */
+  .reviews-section {
+    padding: 15px !important;
+    margin-top: 25px !important;
+  }
+  .reviews-section h3 {
+    font-size: 1.3rem !important;
+  }
+  .review-form .row {
+    flex-direction: column !important;
+  }
+  .review-form input,
+  .review-form select,
+  .review-form textarea {
+    width: 100% !important;
+    font-size: 14px !important;
+    padding: 10px 14px !important;
+  }
+  .review-item {
+    padding: 12px 14px !important;
+  }
+  .review-item .review-header strong {
+    font-size: 14px !important;
+  }
+  .review-item .review-text {
+    font-size: 14px !important;
+  }
+  
+  /* درباره من */
+  .about-section {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  .about-text h3 {
+    font-size: 1.5rem !important;
+  }
+  .about-text h3 i {
+    font-size: 2rem !important;
+    padding: 8px !important;
+  }
+  .about-text p {
+    font-size: 14px !important;
+  }
+  .about-logo-badge {
+    padding: 20px !important;
+  }
+  .about-logo-badge img {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  
+  /* تماس با من */
+  .contact-info {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  .contact-form {
+    padding: 20px !important;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    width: 100% !important;
+    font-size: 14px !important;
+    padding: 10px 14px !important;
+  }
+  .contact-form h4 {
+    font-size: 1.1rem !important;
+  }
+  .contact-item {
+    font-size: 14px !important;
+    padding: 10px 14px !important;
+  }
+  
+  /* حریم خصوصی */
+  .privacy-content h3 {
+    font-size: 1.5rem !important;
+  }
+  .privacy-content h4 {
+    font-size: 1.1rem !important;
+  }
+  .privacy-content p {
+    font-size: 14px !important;
+  }
+  .privacy-list li {
+    font-size: 14px !important;
+  }
+  
+  /* فوتر */
+  footer {
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding: 15px !important;
+    font-size: 13px !important;
+    text-align: center !important;
+  }
+  .footer-links {
+    display: flex !important;
+    gap: 15px !important;
+  }
+}
   </style>
 </head>
 <body>
